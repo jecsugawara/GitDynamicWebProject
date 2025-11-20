@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自己紹介</title>
+    <style>
+        body {
+            font-family: "Hiragino Sans", Meiryo, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: #02030a;
+            color: #d0f8ff;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: rgba(10, 20, 40, 0.7);
+            padding: 40px;
+            border-radius: 12px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 255, 0.4);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        h1 {
+            border-left: 6px solid #00eaff;
+            padding-left: 12px;
+            color: #7dfbff;
+            text-shadow: 0 0 10px #0ff;
+        }
+        .section-title {
+            margin-top: 35px;
+            font-size: 1.3em;
+            font-weight: bold;
+            border-bottom: 2px solid #00eaff;
+            padding-bottom: 6px;
+            text-shadow: 0 0 8px #00ffff;
+        }
+        ul li {
+            margin-bottom: 5px;
+            padding-left: 5px;
+        }
+
+        /* ネオングローエフェクト */
+        .neon {
+            color: #8ffcff;
+            text-shadow: 0 0 6px #0ff, 0 0 12px #0ff;
+        }
+
+        /* 浮遊アニメ */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-effect {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* フェードイン */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .fade-section {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* グリッチ効果 */
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px #0ff; }
+            20% { text-shadow: -2px -2px #f0f; }
+            40% { text-shadow: 2px -2px #0ff; }
+            60% { text-shadow: -2px 2px #f0f; }
+            100% { text-shadow: 2px 2px #0ff; }
+        }
+        .glitch:hover {
+            animation: glitch 0.4s infinite;
+        }
+
+        /* トップへ戻るボタン */
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background: #00eaff;
+            color: #000;
+            font-weight: bold;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 0 12px #00eaff;
+        }
+
+        /* サイバーノイズ背景 */
+        .bg-noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 255, 255, 0.05) 0px,
+                rgba(0, 255, 255, 0.05) 2px,
+                rgba(0, 0, 0, 0.05) 2px,
+                rgba(0, 0, 0, 0.05) 4px
+            );
+            opacity: 0.3;
+            animation: noise 0.6s infinite;
+        }
+        @keyframes noise {
+            0% { transform: translate(0,0); }
+            50% { transform: translate(-2px,2px); }
+            100% { transform: translate(0,0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-noise"></div>
+        <div class="container float-effect" id="container">
+        <h1>自己紹介</h1>
+        <p>こんにちは！川原田です。</p>
+
+        <div class="section-title fade-section">基本情報</div>
+        <ul>
+            <li>名前：川原田滉樹</li>
+            <li>出身：埼玉県</li>
+            <li>職業 / 学生</li>
+        </ul>
+
+        <div class="section-title fade-section">スキル</div>
+        <ul>
+            <li>HTML / CSS / JavaScript</li>
+            <li>Java</li>
+        </ul>
+
+        <div class="section-title fade-section">趣味・好きなこと</div>
+        <ul>
+            <li>観葉植物栽培</li>
+            <li>コーヒー</li>
+        </ul>
+
+        <div class="section-title fade-section">メッセージ</div>
+        <p>
+            ここまで読んでいただきありがとうございます！<br>
+            これからもよろしくお願いします。
+        </p>
+    </div>
+
+    <div id="backToTop">↑</div>
+
+    <script>
+        // カードにホバーでふわっと
+        const container = document.getElementById("container");
+        container.addEventListener("mouseenter", () => {
+            container.style.transform = "scale(1.02)";
+        });
+        container.addEventListener("mouseleave", () => {
+            container.style.transform = "scale(1)";
+        });
+
+        // 見出しクリックでハイライト
+        const titles = document.querySelectorAll('.section-title');
+        titles.forEach(title => {
+            title.addEventListener('click', () => {
+                title.classList.toggle('highlight');
+            });
+        });
+
+        // スクロールでトップへ戻るボタン表示
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 100 ? 'block' : 'none';
+        });
+
+        // トップへ戻る
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+            // スクロール時フェードイン
+        const fadeTargets = document.querySelectorAll('.fade-section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.1s';
+                    entry.target.classList.add('visible');
+                    entry.target.style.opacity = 1;
+                }
+            });
+        }, { threshold: 0.2 });
+
+        fadeTargets.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
