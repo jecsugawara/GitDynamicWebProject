@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyae Pyo Thein | Aspiring System Engineer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import for aesthetics */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f2937; /* Dark gray text */
+            transition: background-color 0.3s;
+        }
+        .section-padding {
+            padding: 4rem 1rem;
+        }
+        .card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#10b981', /* Emerald green/blue for primary actions */
+                        'secondary-gray': '#4b5563',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary-blue">Pyae Pyo Thein</a>
+            <div class="space-x-4 flex">
+                <a href="#about" class="text-secondary-gray hover:text-primary-blue transition duration-150">About</a>
+                <a href="#goals" class="text-secondary-gray hover:text-primary-blue transition duration-150">Goals</a>
+                <a href="#favorites" class="text-secondary-gray hover:text-primary-blue transition duration-150">Favorites</a>
+                <a href="#contact" class="text-secondary-gray hover:text-primary-blue transition duration-150">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 1. Hero / About Section -->
+    <section id="about" class="section-padding bg-white">
+        <div class="max-w-4xl mx-auto text-center p-8 rounded-xl bg-gray-50 card">
+            <div class="w-24 h-24 mx-auto mb-4 bg-gray-300 rounded-full flex items-center justify-center">
+                <!-- Placeholder Avatar/Icon using SVG (Lucide-react equivalent) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Hello, I'm Pyae Pyo Thein.</h1>
+            <p class="text-xl text-secondary-gray mb-6">
+                I am proudly from **Myanmar** and am focused on building a strong foundation in technology.
+            </p>
+            <p class="text-lg text-gray-700">
+                My passion lies in understanding complex systems and optimizing infrastructure. This drive fuels my journey to become an expert **System Engineer**—a role where I can combine technical skill with strategic thinking to ensure robust, scalable, and efficient operations.
+            </p>
+        </div>
+    </section>
+
+    <!-- 2. Goals Section -->
+    <section id="goals" class="section-padding bg-primary-blue text-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">My Engineering Vision</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <!-- Goal 1: System Engineering Focus -->
+                <div class="p-6 bg-white text-gray-900 rounded-xl card">
+                    <svg class="w-8 h-8 mx-auto mb-3 text-primary-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    <h3 class="text-xl font-semibold mb-2">Systems and Infrastructure</h3>
+                    <p class="text-gray-600">Deep dive into networking, cloud computing (AWS/Azure), and Linux administration to master the backbone of modern tech organizations.</p>
+                </div>
+                
+                <!-- Goal 2: Automation & Efficiency -->
+                <div class="p-6 bg-white text-gray-900 rounded-xl card">
+                    <svg class="w-8 h-8 mx-auto mb-3 text-primary-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="m17 5-5-3-5 3"/><path d="m17 19-5 3-5-3"/><path d="M18.5 9.5a2.5 2.5 0 0 1-5 0"/><path d="M10.5 14.5a2.5 2.5 0 0 0 5 0"/></svg>
+                    <h3 class="text-xl font-semibold mb-2">DevOps and Scripting</h3>
+                    <p class="text-gray-600">Focus on Python/Bash scripting, Terraform, and Ansible to build continuous integration and deployment (CI/CD) pipelines.</p>
+                </div>
+                
+                <!-- Goal 3: Problem Solving -->
+                <div class="p-6 bg-white text-gray-900 rounded-xl card">
+                    <svg class="w-8 h-8 mx-auto mb-3 text-primary-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 8.5L12 10l1.5-1.5"/><path d="M4 12V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v9"/><path d="M12 22v-8"/><path d="M4 16v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/><path d="M10 12v-2"/></svg>
+                    <h3 class="text-xl font-semibold mb-2">Resilience and Security</h3>
+                    <p class="text-gray-600">Developing robust troubleshooting skills and emphasizing security protocols to maintain highly resilient computing environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Favorites / Interests Section -->
+    <section id="favorites" class="section-padding bg-f7f7f7">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Favorites & Passions</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Favorite 1: Travel / Culture (Myanmar Focus) -->
+                <div class="p-6 bg-white rounded-xl card">
+                    <span class="text-3xl block mb-2">⛰️</span>
+                    <h4 class="text-lg font-semibold mb-1">Exploring Nature</h4>
+                    <p class="text-gray-600 text-sm">Finding inspiration in the natural landscapes of Myanmar, from the temples of Bagan to the mountains in the north. A great way to clear the mind for complex debugging.</p>
+                </div>
+                
+                <!-- Favorite 2: Food (Cultural) -->
+                <div class="p-6 bg-white rounded-xl card">
+                    <span class="text-3xl block mb-2">🍜</span>
+                    <h4 class="text-lg font-semibold mb-1">Burmese Tea Leaf Salad</h4>
+                    <p class="text-gray-600 text-sm">My ultimate comfort food: **Lahpet Thoke**. The perfect mix of textures and flavors—complex yet harmonized, much like a well-configured server rack.</p>
+                </div>
+                
+                <!-- Favorite 3: Technical Interest -->
+                <div class="p-6 bg-white rounded-xl card">
+                    <span class="text-3xl block mb-2">🤖</span>
+                    <h4 class="text-lg font-semibold mb-1">Low-Level Networking</h4>
+                    <p class="text-gray-600 text-sm">Deeply fascinated by how packets travel the globe. Understanding TCP/IP and routing protocols is like solving the ultimate real-time puzzle.</p>
+                </div>
+                
+                <!-- Favorite 4: Hobby -->
+                <div class="p-6 bg-white rounded-xl card">
+                    <span class="text-3xl block mb-2">🎧</span>
+                    <h4 class="text-lg font-semibold mb-1">Ambient Music</h4>
+                    <p class="text-gray-600 text-sm">Listening to ambient and electronic music while coding. It provides the perfect, non-distracting rhythm for deep concentration on technical problems.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Contact Section -->
+    <section id="contact" class="section-padding bg-gray-100">
+        <div class="max-w-xl mx-auto text-center p-8 bg-white rounded-xl card">
+            <h2 class="text-3xl font-bold mb-4 text-gray-900">Let's Connect</h2>
+            <p class="text-lg text-secondary-gray mb-6">I am always open to discussing new technologies, engineering challenges, or career opportunities.</p>
+            
+            <div class="space-y-4">
+                <a href="mailto:pyaepyothein.engineer@example.com" class="inline-block w-full px-8 py-3 bg-primary-blue text-white font-semibold rounded-lg hover:bg-emerald-600 transition duration-300 shadow-md">
+                    Email Me (Example)
+                </a>
+                <a href="https://linkedin.com/in/pyaepyothein" target="_blank" class="inline-block w-full px-8 py-3 border border-secondary-gray text-secondary-gray font-semibold rounded-lg hover:bg-gray-200 transition duration-300">
+                    Connect on LinkedIn (Example)
+                </a>
+            </div>
+            <p class="mt-4 text-xs text-gray-500">Note: The email and LinkedIn links above are placeholders for your actual information.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; <span id="currentYear"></span> Pyae Pyo Thein. Built with passion from Myanmar.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for dynamic elements -->
+    <script>
+        // Get the current year for the copyright notice
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Simple smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Console greeting
+        console.log("Welcome to Pyae Pyo Thein's portfolio. System integrity is key!");
+    </script>
+</body>
+</html>
